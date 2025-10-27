@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -38,25 +37,42 @@
                                env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 
+    /* Position the link */
+    .link {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .link a {
+      color: #a8e6cf;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
     /* Motion preference respected (no animations used, but future-proof) */
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
     /* Mobile tweaks */
     @media (max-width: 600px) {
-      /* Nudge the interesting part of the image into view on phones.
-         Adjust these values if you want a different crop. */
       .bg { background-position: 30% center; }
     }
   </style>
 </head>
-  <p style="text-align:center; margin-top:20px;">
-  <a href="services.html" style="color:#a8e6cf; text-decoration:none; font-size:1.2em;">
-    Services
-  </a>
-</p>
 <body>
   <div class="bg" role="img" aria-label="Background image"></div>
   <div class="tint" aria-hidden="true"></div>
   <div class="safe" aria-hidden="true"></div>
+
+  <!-- ✅ Link correctly placed inside the body -->
+  <div class="link">
+    <a href="services.html">Services</a>
+  </div>
 </body>
 </html>
