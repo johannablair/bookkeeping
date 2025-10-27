@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Johanna Blair</title>
-  <meta name="description" content="" />
+  <meta name="description" content="Bookkeeping and creative accounts support by Johanna Blair" />
   <meta name="theme-color" content="#1a0f0f" />
   <style>
     /* Page base */
@@ -19,60 +19,22 @@
       position: fixed;
       inset: 0;
       background-image: url("./background.png");
-      background-size: cover;      /* fill screen */
+      background-size: cover;
       background-repeat: no-repeat;
-      background-position: center; /* default focal point for large screens */
+      background-position: center;
     }
 
     /* Optional subtle dark tint for readability if you add text later */
     .tint {
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       background: radial-gradient(1200px 800px at 15% 35%, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
       pointer-events: none;
     }
 
-    /* Respect iPhone/Android safe areas even if you add content later */
+    /* Safe areas for mobile devices */
     .safe {
-      position: fixed; inset: env(safe-area-inset-top) env(safe-area-inset-right)
-                               env(safe-area-inset-bottom) env(safe-area-inset-left);
-    }
+      position: fixed;
+      inset: env(safe-area-inset-top) env(safe-area-inset-right)
+             env(safe-area-inset
 
-    /* Position the link */
-    .link {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-    }
-
-    .link a {
-      color: #a8e6cf;
-      text-decoration: none;
-      font-size: 1.2em;
-    }
-
-    .link a:hover {
-      text-decoration: underline;
-    }
-
-    /* Motion preference respected (no animations used, but future-proof) */
-    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
-
-    /* Mobile tweaks */
-    @media (max-width: 600px) {
-      .bg { background-position: 30% center; }
-    }
-  </style>
-</head>
-<body>
-  <div class="bg" role="img" aria-label="Background image"></div>
-  <div class="tint" aria-hidden="true"></div>
-  <div class="safe" aria-hidden="true"></div>
-
-  <!-- ✅ Link correctly placed inside the body -->
-  <div class="link">
-    <a href="services.html">Services</a>
-  </div>
-</body>
-</html>
