@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Johanna Blair — Bookkeeping</title>
+  <meta name="description" content="Bookkeeping etc… Get in touch: jo@johannablair.co.uk" />
+  <meta property="og:title" content="Johanna Blair — Bookkeeping" />
+  <meta property="og:description" content="Bookkeeping etc… Get in touch: jo@johannablair.co.uk" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://johannablair.co.uk/" />
+  <style>
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: #fff;
+      background: #1a0f0f;
+      overflow: hidden;
+    }
+    .bg {
+      position: fixed;
+      inset: 0;
+      background-image: url('./background.png'); /* change file name if needed */
+      background-size: cover;
+      background-position: center;
+      filter: saturate(110%);
+      z-index: -2;
+    }
+    .tint {
+      position: fixed; inset: 0; z-index: -1;
+      background: radial-gradient(1200px 800px at 15% 35%, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
+    }
+    .wrap {
+      display: grid;
+      place-items: center;
+      height: 100%;
+      padding: clamp(16px, 4vw, 48px);
+    }
+    .card {
+      width: min(1100px, 92vw);
+      display: flex; flex-direction: column; gap: 28px;
+      align-items: flex-start;
+      text-shadow: 0 2px 24px rgba(0,0,0,.35);
+      user-select: text;
+    }
+    .email {
+      font-size: clamp(22px, 3.2vw, 42px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.2px;
+    }
+    .tagline {
+      font-size: clamp(18px, 2.4vw, 28px);
+      font-weight: 600;
+      opacity: 0.95;
+    }
+    a { color: #fff; text-decoration-thickness: 2px; }
+    a:hover, a:focus { text-decoration: underline wavy; text-underline-offset: 3px; }
+    footer {
+      position: fixed; left: 0; right: 0; bottom: 0;
+      padding: 14px 18px; font-size: 14px; opacity: .8;
+      display: flex; justify-content: center; gap: 12px;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .card { animation: fadeUp .9s ease-out both; }
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: translateY(0) } }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" role="img" aria-label="Abstract background art"></div>
+  <div class="tint" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <section class="card" aria-label="Contact">
+      <h1 class="email">
+        <a href="mailto:jo@johannablair.co.uk">jo@johannablair.co.uk</a>
+      </h1>
+      <p class="tagline">bookkeeping etc…</p>
+    </section>
+  </main>
+</body>
+</html>
