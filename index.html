@@ -3,75 +3,44 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Johanna Blair</title>
-  <meta name="description" content="Bookkeeping and creative accounts support by Johanna Blair" />
   <meta name="theme-color" content="#1a0f0f" />
   <style>
-    /* Page base */
     html, body { height: 100%; }
-    body {
-      margin: 0;
-      background: #1a0f0f; /* fallback while image loads */
-      color: #fff;
-    }
+    body { margin: 0; background: #1a0f0f; color: #fff; }
 
-    /* Full-screen background */
     .bg {
-      position: fixed;
-      inset: 0;
-      background-image: url("./background.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      position: fixed; inset: 0;
+      background: url("./background.png") center / cover no-repeat;
     }
-
-    /* Optional subtle dark tint for readability if you add text later */
     .tint {
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background: radial-gradient(1200px 800px at 15% 35%, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
       pointer-events: none;
     }
-
-    /* Safe areas for mobile devices */
     .safe {
-      position: fixed;
-      inset: env(safe-area-inset-top) env(safe-area-inset-right)
+      position: fixed; inset: env(safe-area-inset-top) env(safe-area-inset-right)
              env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 
-    /* Elegant 'Services' link styling */
-    .link {
-      position: absolute;
-      top: 57%; /* adjust to sit neatly under 'BOOKKEEPING ETC...' */
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-    }
-
-    .link a {
+    /* ===== Bottom-right corner link ===== */
+    .corner-link {
+      position: fixed;
+      right: calc(16px + env(safe-area-inset-right));
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      z-index: 10;
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: 14px;
+      letter-spacing: 0.04em;
       color: #a8e6cf;
       text-decoration: none;
-      font-family: "Times New Roman", Georgia, serif;
-      font-size: 1em;
-      letter-spacing: 0.05em;
-      opacity: 0.9;
-      transition: opacity 0.3s ease, text-decoration 0.3s ease;
+      padding: 10px 12px;
+      border-radius: 8px;
+      text-shadow: 0 1px 2px rgba(0,0,0,.45);
     }
+    .corner-link:hover { text-decoration: underline; }
 
-    .link a:hover {
-      text-decoration: underline;
-      opacity: 1;
-    }
-
-    /* Motion preference respected (no animations used, but future-proof) */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
-    }
-
-    /* Mobile tweaks */
     @media (max-width: 600px) {
-      .bg { background-position: 30% center; }
-      .link a { font-size: 0.95em; }
+      .corner-link { font-size: 16px; padding: 12px 14px; }
     }
   </style>
 </head>
@@ -80,9 +49,7 @@
   <div class="tint" aria-hidden="true"></div>
   <div class="safe" aria-hidden="true"></div>
 
-  <!-- Elegant 'Services' link under the main image text -->
-  <div class="link">
-    <a href="services.html">Services</a>
-  </div>
+  <!-- Bottom-right link -->
+  <a class="corner-link" href="services.html">Services</a>
 </body>
 </html>
