@@ -18,55 +18,49 @@
       background: url("./services.png") center / cover no-repeat;
     }
 
-    /* ===== Bottom-right corner link ===== */
-    .corner-link {
-      position: fixed;
-      right: calc(16px + env(safe-area-inset-right));
-      bottom: calc(16px + env(safe-area-inset-bottom));
-      z-index: 10;
+/* ===== Bottom-right corner link (cross-browser consistent) ===== */
+.corner-link {
+  position: fixed;
+  right: calc(16px + env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 10;
 
-      /* Typography (sans-serif only, narrow and elegant) */
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 300; /* light weight */
-      font-size: 14px;
-      letter-spacing: 0.05em;
-      color: ##5c0a01; /*link colour */
-      text-decoration: none;
+  /* typography */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1;                 /* keeps it visually compact */
+  letter-spacing: 0.05em;
+  text-decoration: none;
 
-      /* Layout and styling */
-      padding: 6px 8px;
-      border-radius: 8px;
-      text-shadow: 0 1px 2px rgba(255,255,255,.35);
-      -webkit-text-size-adjust: 100%;
+ color: #faffcd; */
 
-      transform-origin: bottom right;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      opacity: 0.9;
-    }
+  /* base: mobile-first (phones) */
+  font-size: 14px;
+  padding: 10px 12px;
 
-    /* Shrink link on desktops/laptops */
-    @media (min-width: 601px) {
-      .corner-link {
-        transform: scale(0.5); /* half size on larger screens */
-      }
-    }
+  /* avoid auto text scaling on iOS/Safari */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 
-    /* Full size on mobiles */
-    @media (max-width: 600px) {
-      .corner-link {
-        transform: scale(1);
-        font-size: 14px;
-        padding: 10px 12px;
-      }
-    }
+  /* subtle readability */
+  text-shadow: 0 1px 2px rgba(0,0,0,.45);
+}
 
-    /* Hover and active states */
-    .corner-link:hover,
-    .corner-link:focus,
-    .corner-link:active {
-      text-decoration: none;
-      outline: none;
-      opacity: 1;
+/* Laptops / desktops: smaller, fixed size */
+@media (min-width: 601px) {
+  .corner-link {
+    font-size: 11px;    /* try 10–12px to taste */
+    padding: 8px 10px;  /* scale tap area down a touch on desktop */
+  }
+}
+
+/* Interaction – keep clean, no underline */
+.corner-link:hover,
+.corner-link:focus,
+.corner-link:active {
+  text-decoration: none;
+  outline: none;
+}
     }
   </style>
 </head>
