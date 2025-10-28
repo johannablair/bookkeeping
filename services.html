@@ -18,36 +18,39 @@
       background: url("./services.png") center / cover no-repeat;
     }
 
-    /* ===== Bottom-right corner link ===== */
+    /* ===== Bottom-right corner links ===== */
     .corner-link {
       position: fixed;
-      right: calc(16px + env(safe-area-inset-right));
       bottom: calc(16px + env(safe-area-inset-bottom));
       z-index: 10;
-
-      /* Typography (sans-serif, light and elegant) */
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 300; /* fine weight */
+      font-weight: 300;
       font-size: 12px;
       letter-spacing: 0.05em;
-      color: #7b1e15; /* link colour */
+      color: #7b1e15;
       text-decoration: none;
-
-      /* Layout and styling */
       padding: 6px 8px;
       border-radius: 8px;
-      /* text-shadow: 0 1px 2px rgba(0,0,0,.45);*/
       -webkit-text-size-adjust: 100%;
-
       transform-origin: bottom right;
       transition: transform 0.3s ease, opacity 0.3s ease;
       opacity: 0.9;
     }
 
-    /* Shrink link on desktops/laptops */
+    /* Home link stays rightmost */
+    .corner-link.home {
+      right: calc(16px + env(safe-area-inset-right));
+    }
+
+    /* Profile link sits to the left of home */
+    .corner-link.profile {
+      right: calc(70px + env(safe-area-inset-right)); /* horizontal spacing */
+    }
+
+    /* Shrink links on desktops/laptops */
     @media (min-width: 601px) {
       .corner-link {
-        transform: scale(0.5); /* half size on larger screens */
+        transform: scale(0.5);
       }
     }
 
@@ -57,6 +60,9 @@
         transform: scale(1);
         font-size: 14px;
         padding: 10px 12px;
+      }
+      .corner-link.profile {
+        right: calc(100px + env(safe-area-inset-right)); /* adjust spacing for larger mobile text */
       }
     }
 
@@ -68,15 +74,13 @@
       outline: none;
       opacity: 1;
     }
-  }
-    
   </style>
 </head>
 <body>
   <div class="bg" role="img" aria-label="Services background"></div>
 
-  <!-- Bottom-right link back to home -->
-  <a class="corner-link" href="index.html" aria-label="Back to Home">home</a>
+  <!-- Bottom-right links -->
+  <a class="corner-link profile" href="profile.html" aria-label="View Profile">profile</a>
+  <a class="corner-link home" href="index.html" aria-label="Back to Home">home</a>
 </body>
 </html>
-
