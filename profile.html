@@ -4,49 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Profile – Jo Blair</title>
-  <meta name="robots" content="noindex, nofollow">
-
   <style>
-    html, body { height: 100%; margin: 0; padding: 0; }
-
-    body {
-      background: #f6f7fb;
-      color: #1a1646;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    html, body { height: 100%; }
+    body { 
+      margin: 0; 
+      background: #e7f7ff; 
+      color: #1a1646; 
     }
 
-    /* Full-screen background image */
+    /* Full-screen background */
     .bg {
-      position: fixed;
-      inset: 0;
-      background: url("./profile.png") center / contain no-repeat;
-      background-color: #f6f7fb; /* visible behind transparent parts */
+      position: fixed; inset: 0;
+      background: url("./profile.png") center / cover no-repeat;
     }
 
-    /* Bottom-right corner link (same style as on Services page) */
+      /* ===== Bottom-right corner link ===== */
     .corner-link {
       position: fixed;
       right: calc(16px + env(safe-area-inset-right));
       bottom: calc(16px + env(safe-area-inset-bottom));
       z-index: 10;
+
+      /* Typography (sans-serif, light and elegant) */
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 300;
+      font-weight: 300; /* fine weight */
       font-size: 12px;
       letter-spacing: 0.05em;
-      color: #478d6b;
+      color: #478d6b; /* link colour */
       text-decoration: none;
+
+      /* Layout and styling */
       padding: 6px 8px;
       border-radius: 8px;
+      text-shadow: 0 1px 2px rgba(0,0,0,.45);
       -webkit-text-size-adjust: 100%;
+
       transform-origin: bottom right;
       transition: transform 0.3s ease, opacity 0.3s ease;
       opacity: 0.9;
     }
 
-    /* Shrink link on larger screens */
+    /* Shrink link on desktops/laptops */
     @media (min-width: 601px) {
       .corner-link {
-        transform: scale(0.5);
+        /*   transform: scale(0.5); /* half size on larger screens */
       }
     }
 
@@ -59,7 +60,7 @@
       }
     }
 
-    /* Hover + focus states */
+    /* Hover and active states */
     .corner-link:hover,
     .corner-link:focus,
     .corner-link:active {
@@ -69,11 +70,12 @@
     }
   </style>
 </head>
-
 <body>
-  <div class="bg" role="img" aria-label="Profile background image with details."></div>
+  <div class="bg" role="img" aria-label="Background image"></div>
+  <div class="tint" aria-hidden="true"></div>
+  <div class="safe" aria-hidden="true"></div>
 
-  <!-- Bottom-right link back to home -->
-  <a class="corner-link" href="index.html" aria-label="Back to Home">home</a>
+  <!-- Bottom-right link -->
+  <a class="corner-link" href="home.html">home</a>
 </body>
 </html>
