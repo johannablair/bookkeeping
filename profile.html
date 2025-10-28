@@ -1,60 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profile — Johanna Blair</title>
-
-  <!-- Keeps it discoverable only via the Services page link -->
-  <meta name="robots" content="noindex, nofollow" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Profile – Jo Blair</title>
+  <meta name="robots" content="noindex, nofollow">
 
   <style>
-    html, body { height: 100%; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
-      min-height: 100vh;
       background: #f6f7fb;
+      color: #1a1646;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
-    /* Full-bleed background image that scales nicely */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      background: url("/assets/images/profile.png") center / contain no-repeat;
-      /* If your image should *cover* the screen, swap contain -> cover */
-      background-color: #f6f7fb; /* shows behind any transparent bits */
-    }
-
-    /* A small “Back” link so visitors can return to Services */
-    .back {
+    /* Full-screen background image */
+    .bg {
       position: fixed;
-      top: 1rem;
-      left: 1rem;
-      padding: .55rem .85rem;
-      border-radius: 999px;
+      inset: 0;
+      background: url("./profile.png") center / contain no-repeat;
+      background-color: #f6f7fb; /* visible behind transparent parts */
+    }
+
+    /* Bottom-right corner link (same style as on Services page) */
+    .corner-link {
+      position: fixed;
+      right: calc(16px + env(safe-area-inset-right));
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      z-index: 10;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      color: #7b1e15;
       text-decoration: none;
-      color: #111;
-      background: rgba(255,255,255,.9);
-      box-shadow: 0 6px 18px rgba(0,0,0,.08);
-      font: 500 14px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      padding: 6px 8px;
+      border-radius: 8px;
+      -webkit-text-size-adjust: 100%;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.9;
     }
 
-    @media (prefers-color-scheme: dark) {
-      body { background: #0b0b0b; }
-      .back { color: #f9f9f9; background: rgba(20,20,20,.7); border: 1px solid rgba(255,255,255,.12); }
+    /* Shrink link on larger screens */
+    @media (min-width: 601px) {
+      .corner-link {
+        transform: scale(0.5);
+      }
     }
 
-    /* Accessibility: keep some descriptive text for screen readers only */
-    .sr-only {
-      position: absolute !important;
-      width: 1px; height: 1px; overflow: hidden;
-      clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; margin: -1px;
+    /* Full size on mobiles */
+    @media (max-width: 600px) {
+      .corner-link {
+        transform: scale(1);
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+    }
+
+    /* Hover + focus states */
+    .corner-link:hover,
+    .corner-link:focus,
+    .corner-link:active {
+      text-decoration: none;
+      outline: none;
+      opacity: 1;
     }
   </style>
 </head>
+
 <body>
-  <a class="back" href="/services.html" aria-label="Back to Services">← Back</a>
-  <div class="hero" role="img" aria-label="Profile page graphic with contact and background details."></div>
-  <p class="sr-only">Profile details are embedded in the background image.</p>
+  <div class="bg" role="img" aria-label="Profile background image with details."></div>
+
+  <!-- Bottom-right link back to home -->
+  <a class="corner-link" href="index.html" aria-label="Back to Home">home</a>
 </body>
 </html>
