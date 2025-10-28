@@ -38,7 +38,11 @@
       text-shadow: 0 1px 2px rgba(0,0,0,.45);
     }
 
-    .corner-link:hover { text-decoration: underline; }
+   .corner-link:hover,
+.corner-link:focus,
+.corner-link:active {
+  text-decoration: none;
+  outline: none;
 
     /* On mobile, make it normal size for readability */
     @media (max-width: 600px) {
