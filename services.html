@@ -37,14 +37,9 @@
       opacity: 0.9;
     }
 
-    /* Home link stays rightmost */
-    .corner-link.home {
-      right: calc(16px + env(safe-area-inset-right));
-    }
-
-    /* Profile link sits to the left of home */
+    /* Profile link sits right */
     .corner-link.profile {
-      right: calc(70px + env(safe-area-inset-right)); /* horizontal spacing */
+      right: calc(16px + env(safe-area-inset-right));
     }
 
     /* Shrink links on desktops/laptops */
@@ -81,6 +76,5 @@
 
   <!-- Bottom-right links -->
   <a class="corner-link profile" href="profile.html" aria-label="View Profile">profile</a>
-  <a class="corner-link home" href="index.html" aria-label="Back to Home">home</a>
 </body>
 </html>
