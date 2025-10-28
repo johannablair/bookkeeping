@@ -12,56 +12,60 @@
       position: fixed; inset: 0;
       background: url("./background.png") center / cover no-repeat;
     }
+
     .tint {
       position: fixed; inset: 0;
       background: radial-gradient(1200px 800px at 15% 35%, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
       pointer-events: none;
     }
+
     .safe {
       position: fixed; inset: env(safe-area-inset-top) env(safe-area-inset-right)
              env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 
-/* ===== Bottom-right corner link ===== */
-.corner-link {
-  position: fixed;
-  right: calc(16px + env(safe-area-inset-right));
-  bottom: calc(16px + env(safe-area-inset-bottom));
-  z-index: 10;
-  font-family: "Times New Roman", Georgia, serif;
+    /* ===== Bottom-right corner link ===== */
+    .corner-link {
+      position: fixed;
+      right: calc(16px + env(safe-area-inset-right));
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      z-index: 10;
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: 14px; /* base size */
+      letter-spacing: 0.04em;
+      color: #a8e6cf;
+      text-decoration: none;
+      padding: 6px 8px;
+      border-radius: 8px;
+      text-shadow: 0 1px 2px rgba(0,0,0,.45);
+      -webkit-text-size-adjust: 100%;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
 
-  /* Default for desktops/laptops — quite small */
-  font-size: 0.6vw;     /* scales with screen width */
-  min-font-size: 7px;   /* safety floor for tiny windows */
-  letter-spacing: 0.04em;
+    /* Shrink link on desktops/laptops */
+    @media (min-width: 601px) {
+      .corner-link {
+        transform: scale(0.5); /* 50% of normal size */
+      }
+    }
 
-  color: #a8e6cf;
-  text-decoration: none;
-  padding: 6px 8px;
-  border-radius: 8px;
-  text-shadow: 0 1px 2px rgba(0,0,0,.45);
+    /* Keep full size on mobile phones */
+    @media (max-width: 600px) {
+      .corner-link {
+        transform: scale(1);
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+    }
 
-  /* Stop iOS from auto-enlarging small text */
-  -webkit-text-size-adjust: 100%;
-}
-
-/* Hover / click */
-.corner-link:hover,
-.corner-link:focus,
-.corner-link:active {
-  text-decoration: none;
-  outline: none;
-}
-
-/* On small screens (mobiles), keep it larger for touch */
-@media (max-width: 600px) {
-  .corner-link {
-    font-size: 14px;       /* fixed, readable mobile size */
-    padding: 10px 12px;
-  }
-}
-
-
+    /* Remove underline and focus outline */
+    .corner-link:hover,
+    .corner-link:focus,
+    .corner-link:active {
+      text-decoration: none;
+      outline: none;
+    }
   </style>
 </head>
 <body>
