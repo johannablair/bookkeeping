@@ -20,22 +20,40 @@
       bottom: calc(16px + env(safe-area-inset-bottom));
       z-index: 10;
       font-family: "Times New Roman", Georgia, serif;
-      font-size: 2.5px;
+      font-size: 14px; /* base size for browsers */
       letter-spacing: 0.04em;
-      color: #000000; /* match home page link colour */
+      color: #a8e6cf;
       text-decoration: none;
-      padding: 10px 12px;
+      padding: 6px 8px;
       border-radius: 8px;
-      text-shadow: 0 .5px 1.5px rgba(0,0,0,.45);
+      text-shadow: 0 1px 2px rgba(0,0,0,.45);
+      -webkit-text-size-adjust: 100%;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
     }
-  .corner-link:hover,
-.corner-link:focus,
-.corner-link:active {
-  text-decoration: none;
-  outline: none;}
 
+    /* Shrink link on desktops/laptops */
+    @media (min-width: 601px) {
+      .corner-link {
+        transform: scale(0.5); /* 50% of normal size */
+      }
+    }
+
+    /* Keep full size on mobile phones */
     @media (max-width: 600px) {
-      .corner-link { font-size: 14px; padding: 12px 14px; }
+      .corner-link {
+        transform: scale(1);
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+    }
+
+    /* Remove underline and focus outline */
+    .corner-link:hover,
+    .corner-link:focus,
+    .corner-link:active {
+      text-decoration: none;
+      outline: none;
     }
   </style>
 </head>
@@ -46,3 +64,5 @@
   <a class="corner-link" href="index.html" aria-label="Back to Home">Back</a>
 </body>
 </html>
+
+
