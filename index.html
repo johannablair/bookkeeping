@@ -6,19 +6,13 @@
   <meta name="theme-color" content="#1a0f0f" />
   <style>
     html, body { height: 100%; }
-    body { 
-      margin: 0; 
-      background: #1a0f0f; 
-      color: #fff; 
-    }
+    body { margin: 0; background: #1a0f0f; color: #fff; }
 
-    /* Full-screen background */
     .bg {
       position: fixed; inset: 0;
       background: url("./background.png") center / cover no-repeat;
     }
 
-    /* Optional subtle dark tint for readability */
     .tint {
       position: fixed; inset: 0;
       background: radial-gradient(1200px 800px at 15% 35%, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
@@ -37,48 +31,39 @@
       bottom: calc(16px + env(safe-area-inset-bottom));
       z-index: 10;
 
-      /* Typography */
-      font-family: "Didot", "Bodoni MT", "Times New Roman", serif; /* elegant narrow serif */
-      font-weight: 400; /* ensure not bold */
-      font-size: 14px; /* base size */
-      letter-spacing: 0.03em;
-      color: #faffcd; /* pale soft yellow */
-      text-decoration: none;
+      /* Sans-serif for readability */
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
 
-      /* Layout */
+      /* Fixed small size for desktops/laptops */
+      font-size: 10px;
+
+      letter-spacing: 0.04em;
+      color: #a8e6cf;
+      text-decoration: none;
       padding: 6px 8px;
       border-radius: 8px;
-      text-shadow: 0 1px 2px rgba(0,0,0,.4);
-      -webkit-text-size-adjust: 100%;
+      text-shadow: 0 1px 2px rgba(0,0,0,.45);
 
-      transform-origin: bottom right;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      opacity: 0.9;
+      /* Disable Safari/Chrome text resizing */
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
     }
 
-    /* Shrink link on desktops/laptops */
-    @media (min-width: 601px) {
-      .corner-link {
-        transform: scale(0.5); /* half size on larger screens */
-      }
-    }
-
-    /* Full size on mobiles */
+    /* Larger on mobile for touch readability */
     @media (max-width: 600px) {
       .corner-link {
-        transform: scale(1);
-        font-size: 14px;
+        font-size: 15px;
         padding: 10px 12px;
       }
     }
 
-    /* Hover and active states */
+    /* Remove underline/focus outline */
     .corner-link:hover,
     .corner-link:focus,
     .corner-link:active {
       text-decoration: none;
       outline: none;
-      opacity: 1;
     }
   </style>
 </head>
