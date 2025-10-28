@@ -20,7 +20,7 @@
       bottom: calc(16px + env(safe-area-inset-bottom));
       z-index: 10;
       font-family: "Times New Roman", Georgia, serif;
-      font-size: 14px;
+      font-size: 2.5px;
       letter-spacing: 0.04em;
       color: #a8e6cf; /* match home page link colour */
       text-decoration: none;
@@ -28,7 +28,11 @@
       border-radius: 8px;
       text-shadow: 0 1px 2px rgba(0,0,0,.45);
     }
-    .corner-link:hover { text-decoration: underline; }
+  .corner-link:hover,
+.corner-link:focus,
+.corner-link:active {
+  text-decoration: none;
+  outline: none;}
 
     @media (max-width: 600px) {
       .corner-link { font-size: 16px; padding: 12px 14px; }
