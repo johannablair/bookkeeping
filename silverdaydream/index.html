@@ -10,49 +10,38 @@
       height: 100%;
       margin: 0;
     }
+
     body {
       background-image: url("Silver%20Daydream.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #000; /* fallback */
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: #000;
+      position: relative;
     }
 
-    .enter-button {
-      font-size: 1.75rem;       /* size of the asterisk */
+    /* Top-left overlay link */
+    .top-left-link {
+      position: absolute;
+      top: 16px;
+      left: 16px;
       color: white;
       text-decoration: none;
-      background: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      font-family: serif;
-      line-height: 1;
-
-      /* subtle breathing animation */
-      animation: breath 3s ease-in-out infinite;
-      transform-origin: center center;
+      font-family: sans-serif;
+      font-size: 1rem;   /* small text */
+      padding: 0;        /* clean, no padding */
+      transition: color 0.2s;
     }
 
-    .enter-button:hover {
-      color: #ddd; /* optional subtle change on hover */
-    }
-
-    @keyframes breath {
-      0%   { transform: scale(1); }
-      50%  { transform: scale(1.10); }
-      100% { transform: scale(1); }
+    .top-left-link:hover {
+      color: #cccccc;
     }
   </style>
 </head>
 
 <body>
-  <a href="Silver-Room.html" class="enter-button"></a>
-  </body>
-</html>
+
+  <a href="Silver Room.html" class="top-left-link">prelude</a>
+
 </body>
 </html>
