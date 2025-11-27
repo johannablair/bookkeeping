@@ -10,17 +10,43 @@
       height: 100%;
       margin: 0;
     }
+
     body {
       background-image: url("Silver%20Daydream.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-color: #000; /* fallback */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ----- Center Button Styles ----- */
+    .enter-button {
+      padding: 14px 28px;
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.25s;
+      border: 2px solid white;
+      font-family: serif;
+    }
+
+    .enter-button:hover {
+      background: transparent;
+      color: white;
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Button that takes user to second page -->
+  <a href="silver-room.html" class="enter-button">Enter</a>
+
 </body>
 </html>
-
