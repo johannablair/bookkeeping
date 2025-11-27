@@ -15,15 +15,15 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #000;
-      
+      background-color: #000; /* fallback */
+
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .enter-button {
-      font-size: 3rem;       /* large asterisk */
+      font-size: 3rem;       /* size of the asterisk */
       color: white;
       text-decoration: none;
       background: transparent;
@@ -32,16 +32,27 @@
       cursor: pointer;
       font-family: serif;
       line-height: 1;
+
+      /* subtle breathing animation */
+      animation: breath 4s ease-in-out infinite;
+      transform-origin: center center;
     }
 
     .enter-button:hover {
-      color: #ccc;           /* lighter on hover, optional */
+      color: #ddd; /* optional subtle change on hover */
+    }
+
+    @keyframes breath {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.04); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
 
 <body>
   <a href="silver-room.html" class="enter-button">*</a>
+  </body>
+</html>
 </body>
 </html>
-
