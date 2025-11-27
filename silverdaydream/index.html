@@ -9,39 +9,19 @@
     html, body {
       height: 100%;
       margin: 0;
+      background-color: #000; /* fallback black around the image */
     }
 
     body {
-      background-image: url("Silver%20Daydream.jpg");
-      background-size: cover;
-      background-position: center;
+      background-image: url("SilverDaydream.jpg");
       background-repeat: no-repeat;
-      background-color: #000;
-      position: relative;
-    }
-
-    /* Top-left overlay link */
-    .top-left-link {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      color: white;
-      text-decoration: none;
-      font-family: sans-serif;
-      font-size: 1rem;   /* small text */
-      padding: 0;        /* clean, no padding */
-      transition: color 0.2s;
-    }
-
-    .top-left-link:hover {
-      color: #cccccc;
+      background-position: center center;
+      background-size: contain; /* ensures the whole image is always visible */
     }
   </style>
 </head>
 
 <body>
-
-  <a href="Silver Room.html" class="top-left-link">prelude</a>
-
 </body>
 </html>
+
