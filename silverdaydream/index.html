@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Silver Daydream</title>
 
   <style>
@@ -18,22 +18,22 @@
       background-repeat: no-repeat;
       background-color: #000; /* fallback */
 
+      /* Make body a flex container to center its child */
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    /* ----- Center Button Styles ----- */
     .enter-button {
       padding: 14px 28px;
       background: rgba(255, 255, 255, 0.9);
       color: black;
-      font-size: 1.2rem;
       text-decoration: none;
-      border-radius: 8px;
-      transition: 0.25s;
+      font-size: 1.2rem;
+      border-radius: 6px;
       border: 2px solid white;
       font-family: serif;
+      transition: background 0.25s, color 0.25s;
     }
 
     .enter-button:hover {
@@ -45,7 +45,6 @@
 
 <body>
 
-  <!-- Button that takes user to second page -->
   <a href="silver-room.html" class="enter-button">Enter</a>
 
 </body>
