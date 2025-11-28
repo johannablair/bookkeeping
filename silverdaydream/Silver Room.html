@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silver Room</title>
-    <style>
-        body {
-            /* Set the uploaded image as background */
-            background-image: url('Silver%20Room.jpg'); /* replace with your image file name */
-            background-size: cover;       /* Make sure it covers the entire page */
-            background-repeat: no-repeat; /* Avoid repeating the image */
-            background-position: center;  /* Center the image */
-            margin: 0;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Silver Room</title>
 
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            text-align: center;
-            color: white; /* Change text color if needed */
-        }
-    </style>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      background-image: url("Silver%20Room.jpg"); /* or whatever background you use */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000;
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Black breathing asterisk bottom-right, no halo */
+    .back-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 28px;
+      color: #000000;    /* black asterisk */
+      text-decoration: none;
+      padding: 2px;
+      opacity: 0.8;
+      animation: breathe 3s infinite alternate;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .back-button:hover {
+      transform: scale(1.3);
+      opacity: 1;
+    }
+
+    @keyframes breathe {
+      0%   { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.1); opacity: 1; }
+    }
+  </style>
 </head>
-<body>
-    <div class="content">
 
-    </div>
+<body>
+  <a href="index.html" class="back-button">,</a>
 </body>
 </html>
