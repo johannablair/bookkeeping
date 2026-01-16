@@ -36,56 +36,7 @@ html {
   text-size-adjust: 100%;
 }
 
-/* ===== Bottom-right corner link ===== */
-.corner-link {
-  position: fixed;
-  right: calc(16px + env(safe-area-inset-right));
-  bottom: calc(16px + env(safe-area-inset-bottom));
-  z-index: 10;
 
-  /* More consistent font stack across browsers */
-  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, sans-serif;
-  font-weight: 200;
-  letter-spacing: 0.05em;
-  color: #478d6b;
-  text-decoration: none;
-
-  /* Size with clamp + em-based padding so it scales cleanly */
-  font-size: clamp(12px, 0.6vw + 10px, 16px);
-  padding: 0.45em 0.6em;
-
-  border-radius: 8px;
-  /*text-shadow: 0 1px 2px rgba(0,0,0,.45);*/
-  opacity: 0.9;
-
-  /* Remove transforms – they cause cross-browser inconsistencies */
-  transform: none;
-  transition: opacity .3s ease;
-}
-
-    /* Shrink link on desktops/laptops */
-    @media (min-width: 601px) {
-      .corner-link {
-        /*   transform: scale(0.5); /* half size on larger screens */
-      }
-    }
-
-    /* Full size on mobiles */
-    @media (max-width: 600px) {
-      .corner-link {
-        transform: scale(1);
-        font-size: 14px;
-        padding: 10px 12px;
-      }
-    }
-
-    /* Hover and active states */
-    .corner-link:hover,
-    .corner-link:focus,
-    .corner-link:active {
-      text-decoration: none;
-      outline: none;
       opacity: 1;
     }
   </style>
